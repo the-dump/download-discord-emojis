@@ -78,7 +78,7 @@ function constructTarHeader(fileName, fileSize, fileMode)
     const checksumBuffer = octal(checksum, 8);
     checksumBuffer.copy(buffer, 148);
 
-    return Buffer.concat([ buffer, Buffer.alloc(TAR_HEADER_LENGTH - buffer.length, "\x00") ]);
+    return Buffer.concat([buffer, Buffer.alloc(TAR_HEADER_LENGTH - buffer.length, "\x00")]);
 }
 
 function sanatizefilePath(filePath)
